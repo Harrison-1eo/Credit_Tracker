@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check English Courses</title>
+</head>
+<body>
+    <h1>Check Out English Courses</h1>
+    <form action="/confirm" method="post">
+        <h2>Available Courses:</h2>
+        <ul>
+            {% for course in courses %}
+            <li>
+                <input type="checkbox" name="selected_courses" value="{{ course[0] }}"
+                {% if course[1] == "全英语" %} checked {% endif %}>
+                {{ course[0] }}
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Confirm Selection">
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <!-- Display your result here -->
+    <!-- 分割线 -->
+
+    {% for index, res in results|enumerate %}
+    <p></p>
+    <h2>Condition {{ index }}: {{ res[0] }}</h2>
+        {% for key in res[1].keys() %}
+            <h4>{{ key }}: {{ res[1][key] }}  /  {{ requirements[1][key]["credit"] }}</h4>
+            <p>
+                具体包括:
+                {% for course in res[2][key] %}
+                    {{ course }} /
+                {% endfor %}
+            </p>
+        {% endfor %}
+        {% for key in res[3].keys() %}
+            <h4>{{ key }}: {{ res[3][key] }}  /  {{ requirements[3][key] }}</h4>
+            <p>
+                具体包括：
+                {% for course in res[4][key] %}
+                    {{ course }} /
+                {% endfor %}
+            </p>
+        {% endfor %}
+    {% endfor %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
