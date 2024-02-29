@@ -15,13 +15,13 @@ class Requirement:
 
         # 加载美育课
         self.art_courses = []
-        data = pd.read_excel("courses/美育课.xlsx")
+        data = pd.read_excel("courses/meiyu.xlsx")
         for index, row in data.iterrows():
             self.art_courses.append(row["课程代码"])
 
         # 加载劳育课
         self.lab_courses = {}
-        data = pd.read_excel("courses/劳育课.xlsx")
+        data = pd.read_excel("courses/laoyu.xlsx")
         for index, row in data.iterrows():
             if pd.isna(row["课程代码"]):
                 continue
@@ -31,7 +31,7 @@ class Requirement:
 
         # 加载创新创业课
         self.innovation_courses = []
-        data = pd.read_excel("courses/创新创业课.xlsx")
+        data = pd.read_excel("courses/chuangxinchuangye.xlsx")
         for index, row in data.iterrows():
             self.innovation_courses.append(row["课程代码"])
 

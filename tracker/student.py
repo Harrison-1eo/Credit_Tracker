@@ -54,6 +54,8 @@ class Student:
     def get_progress(self):
         res = []
         print(len(self.maybe_general_or_art_courses))
+        if len(self.maybe_general_or_art_courses) == 0:
+            return [(0, self.my_progress, self.my_progress_detail, self.my_progress_other, self.my_progress_other_detail)]
         for i in range(2 ** len(self.maybe_general_or_art_courses)):
             my_progress = copy.deepcopy(self.my_progress)
             my_progress_detail = copy.deepcopy(self.my_progress_detail)
